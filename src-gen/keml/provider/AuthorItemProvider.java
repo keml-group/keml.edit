@@ -45,24 +45,24 @@ public class AuthorItemProvider extends LifeLineItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addMessageExecutionsPropertyDescriptor(object);
+			addMessagesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Message Executions feature.
+	 * This adds a property descriptor for the Messages feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addMessageExecutionsPropertyDescriptor(Object object) {
+	protected void addMessagesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Author_messageExecutions_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Author_messageExecutions_feature",
+						getResourceLocator(), getString("_UI_Author_messages_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Author_messages_feature",
 								"_UI_Author_type"),
-						KemlPackage.Literals.AUTHOR__MESSAGE_EXECUTIONS, true, false, true, null, null, null));
+						KemlPackage.Literals.AUTHOR__MESSAGES, true, false, true, null, null, null));
 	}
 
 	/**
@@ -77,7 +77,7 @@ public class AuthorItemProvider extends LifeLineItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(KemlPackage.Literals.AUTHOR__MESSAGE_EXECUTIONS);
+			childrenFeatures.add(KemlPackage.Literals.AUTHOR__MESSAGES);
 			childrenFeatures.add(KemlPackage.Literals.AUTHOR__PREKNOWLEDGE);
 		}
 		return childrenFeatures;
@@ -142,7 +142,7 @@ public class AuthorItemProvider extends LifeLineItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Author.class)) {
-		case KemlPackage.AUTHOR__MESSAGE_EXECUTIONS:
+		case KemlPackage.AUTHOR__MESSAGES:
 		case KemlPackage.AUTHOR__PREKNOWLEDGE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
@@ -161,10 +161,10 @@ public class AuthorItemProvider extends LifeLineItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(KemlPackage.Literals.AUTHOR__MESSAGE_EXECUTIONS,
-				KemlFactory.eINSTANCE.createSendMessage()));
+		newChildDescriptors.add(
+				createChildParameter(KemlPackage.Literals.AUTHOR__MESSAGES, KemlFactory.eINSTANCE.createSendMessage()));
 
-		newChildDescriptors.add(createChildParameter(KemlPackage.Literals.AUTHOR__MESSAGE_EXECUTIONS,
+		newChildDescriptors.add(createChildParameter(KemlPackage.Literals.AUTHOR__MESSAGES,
 				KemlFactory.eINSTANCE.createReceiveMessage()));
 
 		newChildDescriptors.add(createChildParameter(KemlPackage.Literals.AUTHOR__PREKNOWLEDGE,

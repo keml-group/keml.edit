@@ -72,7 +72,7 @@ public class NewInformationItemProvider extends InformationItemProvider {
 		if (isInstruction) {
 			return overlayImage(object, getResourceLocator().getImage("full/obj16/isInstruction"));
 		} else {
-			return overlayImage(object, getResourceLocator().getImage("full/obj16/isNoInstruction"));			
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/isNoInstruction"));
 		}
 	}
 
