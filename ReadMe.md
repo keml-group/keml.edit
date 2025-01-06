@@ -1,7 +1,9 @@
-# KEML Edit
+# KEML Edit -- ARCHIVED
 
 This project holds edit code for KEML files.
 It can be generated in a basic flavor from [keml](https://github.com/keml-group/keml). However, this version is advanced in the sense that it has custom icons that are used conditionally.
+
+Since the development of a sirius-based editor that would have been built on top of the edit project was dropped in favor of an own web-based version, the maintenance of an extra edit project is not feasible any more. Hence, the project is ARCHIVED. You may use it, but it will not reflect new changes. In order to apply them, you will need to run the edit code generation on [keml](https://github.com/keml-group/keml), just as described under usage.
 
 ## Usage
 The project itself is packed with all source files. In order to add the new flavor to an existing keml.editor, run Generate -> Editor code or Generate -> All on the keml ecore file as described on the [keml model project](https://github.com/keml-group/keml).
